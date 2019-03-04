@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcomeCrotte');
+    return view('welcome');
 });
 
 
