@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Event extends Model
 {
     protected $fillable = [
-        'Titre', 'Description', 'category_id', 'Status', 'Prix'
+        'titre', 'description', 'category_id', 'status', 'prix'
     ];
 
     public function setCategoryIdAttribute($value){
