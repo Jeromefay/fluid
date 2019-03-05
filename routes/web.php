@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('/', 'FrontController@index');
+Route::get('/expo', 'FrontController@showExpo');
 
 /* CONTACT */
 Route::get('/contact', 'ContactController@show');

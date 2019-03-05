@@ -11,7 +11,7 @@
         </div>
       </div>
       <div class="align-items-center">
-        <button type="submit" class="btn btn-block btn-lg btn-primary">Devenez membre!</button>
+        <button type="submit" class="btn btn-block btn-lg btn-danger">Devenez membre!</button>
       </div>
     </div>
   </header>

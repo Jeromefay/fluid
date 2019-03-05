@@ -9,7 +9,7 @@
         <a class="nav-link" href="#">Qui est Fluid</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Bouger avec Fluid</a>
+        <a class="nav-link" href="{{url('/expo')}}">Bouger avec Fluid</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Faire des choses de ses mains</a>

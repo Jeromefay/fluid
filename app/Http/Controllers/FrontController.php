@@ -30,5 +30,11 @@ class FrontController extends Controller
         return view('front.index', compact('products', 'partners', 'events'));
     }
 
+    public function showExpo(){
+        $events = Event::all()->where('category_id', 1);
+        $expos = Event::all()->where('category_id', 3);
+        return view('front.expo', compact('events', 'expos'));
+    }
+
 }
 
