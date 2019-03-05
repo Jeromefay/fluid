@@ -17,4 +17,7 @@ Route::get('/', function () {
 
 Route::get('/', 'FrontController@index');
 
+/* CONTACT */
+Route::get('/contact', 'ContactController@show');
+Route::post('/contact',  'ContactController@mailToAdmin');
 

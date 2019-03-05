@@ -1,5 +1,5 @@
-<nav class="navbar navbar-dark bg-dark navbar-expand-lg">
-  <a class="navbar-brand" href="#">Logo</a>
+<nav class="navbar navbar-light bg-light navbar-expand-lg">
+  <a class="navbar-brand" href="{{url('/')}}">Logo</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -12,14 +12,15 @@
         <a class="nav-link" href="#">Bouger avec Fluid</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Faire des choses de ses 10 doigts</a>
+        <a class="nav-link" href="#">Faire des choses de ses mains</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Se mélanger</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Contact</a>
+        <a class="nav-link" href="{{url("/contact")}}">Contact</a>
       </li>
     </ul>
+    <a class="btn btn-primary" href="#">Se connecter</a>
   </div>
 </nav>
