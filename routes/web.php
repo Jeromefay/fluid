@@ -22,3 +22,10 @@ Route::get('/expo', 'FrontController@showExpo');
 Route::get('/contact', 'ContactController@show');
 Route::post('/contact',  'ContactController@mailToAdmin');
 
+
+Auth::routes();
+
+Route::resource('admin', 'AdminController')->middleware('auth');
+Route::resource('membre', 'MembreController')->middleware('auth');
+
+Route::get('/home', 'HomeController@index')->name('home');
