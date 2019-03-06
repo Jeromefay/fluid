@@ -25,7 +25,14 @@ Route::post('/contact',  'ContactController@mailToAdmin');
 
 Auth::routes();
 
-Route::resource('admin', 'AdminController')->middleware('auth');
+
 Route::resource('membre', 'MembreController')->middleware('auth');
+
+
+Route::group(['prefix'=>'admin'],function(){
+    Route::resource('/', 'AdminController')->middleware('auth');
+    Route::resource('partenaire', 'PartenaireController')->middleware('auth');
+    Route::resource('utilisateurs', 'UtilisateursController')->middleware('auth');
+});
 
 Route::get('/home', 'HomeController@index')->name('home');

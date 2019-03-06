@@ -9,7 +9,7 @@ use App\Partner;
 use App\Product;
 use App\User;
 
-class AdminController extends Controller
+class PartenaireController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,15 +18,11 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
         $partners = Partner::all();
-        $events = Event::paginate(5);
-        $users = User::all();
-        
 
         if (\Auth::user()->is_admin == 1)
         {
-            return view('back.index', compact('products', 'partners', 'events', 'users'));
+            return view('back.partenaire', compact('partners'));
         }
 
         return redirect()->guest('/');

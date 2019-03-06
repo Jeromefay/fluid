@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 
-class AdminController extends Controller
+class UtilisateursController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +14,17 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return "dashboard";
+        $users = User::all();
+        
+
+        if (\Auth::user()->is_admin == 1)
+        {
+            return view('back.users', compact('users'));
+        }
+
+        return redirect()->guest('/');
     }
+    
 
     /**
      * Show the form for creating a new resource.
@@ -79,6 +89,8 @@ class AdminController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::find($id);
+        $user->delete();
+        return redirect()->route('admin.index');
     }
 }

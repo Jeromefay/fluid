@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 
 class MembreController extends Controller
 {
@@ -13,7 +14,8 @@ class MembreController extends Controller
      */
     public function index()
     {
-        return "truc";
+        $users = User::paginate(10);
+        return view('front.membre.index', compact('users'));
     }
 
     /**

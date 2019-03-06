@@ -6,9 +6,6 @@ use Illuminate\Http\Request;
 use App\Category;
 use App\Event;
 use App\Partner;
-use App\PictureEvent;
-use App\PicturePartner;
-use App\PictureProduct;
 use App\Product;
 
 class FrontController extends Controller
