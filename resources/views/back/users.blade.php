@@ -4,17 +4,17 @@
 
 <ul class="nav nav-tabs bg-dark">
   <li class="nav-item">
-    <a class="nav-link" href="{{url('/admin')}}">Liste des évènements</a>
+    <a class="nav-link tabAdmin" href="{{url('/admin')}}">Liste des évènements</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="{{url('/admin/partenaire')}}">Liste des partenaires</a>
+    <a class="nav-link tabAdmin" href="{{url('/admin/partenaire')}}">Liste des partenaires</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link active" href="{{url('/admin/utilisateurs')}}">Liste des utilisateurs</a>
+    <a class="nav-link active tabAdmin" href="{{url('/admin/utilisateurs')}}">Liste des utilisateurs</a>
   </li>
 </ul>
 
-<table class="table thead-dark">
+<table class="table table-striped table-hover">
   <thead>
     <tr>
       <th scope="col">Titre</th>

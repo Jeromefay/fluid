@@ -3,32 +3,45 @@
 @section('content')
 
 
-<div class="container">
 
 
-<div class="row justify-content-between">
-
-@foreach($users as $user)
 
 
-<div class="card" style="width: 13rem;">
-  <img class="card-img-top" src="..." alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">{{$user->name}}</h5>
-  </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item" style="height:2rem">Cras justo odio</li>
-    <li class="list-group-item" style="height:2rem">Dapibus ac facilisis in</li>
-    <li class="list-group-item" style="height:2rem">Vestibulum at eros</li>
-  </ul>
-  <div class="card-body">
-    <a href="#" class="card-link">Voir le profil</a>
+
+<div class="page-content">
+        <div class="container">
+<div class="container pp-section">
+  <div class="row">
+    <div class="col-md-9 col-sm-12 px-0">
+      <h1 class="h3"> Bienvenue dans l'espace membre</h1>
+    </div>
   </div>
 </div>
-@endforeach
+<div class="container px-0 py-4">
+  <div class="pp-category-filter">
+    <div class="row">
+      <div class="col-sm-12"><a class="btn btn-primary pp-filter-button" href="#" data-filter="all">All</a><a class="btn btn-outline-primary pp-filter-button" href="#" data-filter="compétence 1">Compétence 1</a><a class="btn btn-outline-primary pp-filter-button" href="#" data-filter="compétence 2">Compétence 2</a><a class="btn btn-outline-primary pp-filter-button" href="#" data-filter="compétence 3">Compétence 3</a></div>
+    </div>
+  </div>
 </div>
+<div class="container px-0">
+  <div class="pp-gallery">
+    <div class="card-columns">
+      @foreach($users as $user)
+      <div class="card" data-groups="">
+          <figure class="pp-effect"><img class="img-fluid" src="images/1-nature.jpg" alt="Nature"/>
+            <figcaption>
+            <a href="image-detail.html"><div class="h4">{{$user->name}}</div></a>
+              <p>Compétence 1</p>
+              <p>Compétence 2</p>
+              <p>Compétence 3</p>
+            </figcaption>
+          </figure>
+        </div>
+        @endforeach
+      
+    </div>
+  </div>
 </div>
-
 {{$users->links()}}
-
 @endsection

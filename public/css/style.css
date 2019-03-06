@@ -1,3 +1,5 @@
+/* Page contact */
+
 .title{
     font-size: 7rem;
 }
@@ -46,4 +48,18 @@ form button:hover{
 
 #fh5co-intro{
     background-color: #2addb9;
+}
+
+/* Espace admin */
+
+.tabAdmin {
+    color: #FFF;
+}
+
+.tabAdmin:hover {
+    color: lightgrey;
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.445);
 }

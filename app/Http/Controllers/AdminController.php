@@ -18,11 +18,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
-        $partners = Partner::all();
         $events = Event::paginate(5);
-        $users = User::all();
-        
 
         if (\Auth::user()->is_admin == 1)
         {
@@ -96,6 +92,8 @@ class AdminController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $event = Partner::find($id);
+        $event->delete();
+        return redirect()->route('admin.index');
     }
 }

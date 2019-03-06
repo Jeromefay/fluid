@@ -92,6 +92,8 @@ class PartenaireController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $partner = Partner::find($id);
+        $partner->delete();
+        return redirect()->route('partenaire.index');
     }
 }
