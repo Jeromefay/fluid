@@ -17,24 +17,23 @@
     </div>
   </div>
 </div>
-<div class="container px-0 py-4">
-  <div class="pp-category-filter">
-    <div class="row">
-      <div class="col-sm-12"><a class="btn btn-primary pp-filter-button" href="#" data-filter="all">All</a><a class="btn btn-outline-primary pp-filter-button" href="#" data-filter="compétence 1">Compétence 1</a><a class="btn btn-outline-primary pp-filter-button" href="#" data-filter="compétence 2">Compétence 2</a><a class="btn btn-outline-primary pp-filter-button" href="#" data-filter="compétence 3">Compétence 3</a></div>
-    </div>
-  </div>
-</div>
+<nav class="navbar navbar-light bg-light">
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="SeChercher par compétence" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Chercher</button>
+  </form>
+</nav>
 <div class="container px-0">
   <div class="pp-gallery">
     <div class="card-columns">
       @foreach($users as $user)
       <div class="card" data-groups="">
-          <figure class="pp-effect"><img class="img-fluid" src="images/1-nature.jpg" alt="Nature"/>
+          <figure class="pp-effect"><img class="img-fluid" src="{{asset('images/'.$user->url_img_user)}}" alt="Nature"/>
             <figcaption>
             <a href="image-detail.html"><div class="h4">{{$user->name}}</div></a>
-              <p>Compétence 1</p>
-              <p>Compétence 2</p>
-              <p>Compétence 3</p>
+              <p>{{$user->competence_1}}</p>
+              <p>{{$user->competence_2}}</p>
+              <p>{{$user->competence_3}}</p>
             </figcaption>
           </figure>
         </div>

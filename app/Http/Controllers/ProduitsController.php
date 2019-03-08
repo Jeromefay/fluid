@@ -9,7 +9,7 @@ use App\Partner;
 use App\Product;
 use App\User;
 
-class AdminController extends Controller
+class ProduitsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,11 +18,11 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $events = Event::paginate(5);
+        $products = Product::paginate(5);
 
         if (\Auth::user()->is_admin == 1)
         {
-            return view('back.index', compact('products', 'partners', 'events', 'users'));
+            return view('back.produits', compact('products'));
         }
 
         return redirect()->guest('/');
@@ -36,15 +36,7 @@ class AdminController extends Controller
      */
     public function create()
     {
-        $events = Event::all();
-        $categories = Category::pluck('titre', 'id')->all();
-
-        if (\Auth::user()->is_admin == 1)
-        {
-            return view('back.event.create', compact('events', 'categories'));
-        }
-
-        return redirect()->guest('/');
+        //
     }
 
     /**
@@ -55,35 +47,7 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-
-        /* dump($_FILES); */
-        $this->validate($request, [
-            'titre' => 'required',
-            'description' => 'required|string',
-            'category_id' => 'integer',
-            'status' => 'in:publié,brouillon',
-            'picture' => 'image|max:3000',
-            'date' => 'required|string',
-        ]);
-        
-        $events = Event::create($request->all());
-
-        /* $events->pictureEvents()->attach($request->categories); */
-
-        // image
-        $im = $request->file('picture');
-        
-        if (!empty($im)) {
-            
-            $link = $request->file('picture')->store('');
-
-            $events->pictureEvent()->create([
-                'url_img_event' => $link,
-                /* 'title' => $request->title_image?? $request->title */
-            ]);
-        }
-
-        return redirect()->route('index')->with('message', 'success');
+        //
     }
 
     /**
@@ -128,8 +92,8 @@ class AdminController extends Controller
      */
     public function destroy($id)
     {
-        $event = Partner::find($id);
-        $event->delete();
-        return redirect()->route('admin.index');
+        $product = Product::find($id);
+        $product->delete();
+        return redirect()->route('produits.index');
     }
 }

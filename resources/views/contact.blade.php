@@ -1,14 +1,12 @@
-@extends('layout')
+@extends('layouts.master')
 
 @section('content')
 
 <div id="contactwrap">
     <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-lg-offset-3">
-          <h1>CONTACTEZ-NOUS !</h1>
+        <div class="text-center">
+          <h1 class="">CONTACTEZ FLUID !</h1>
         </div>
-      </div>
     </div>
     <!-- /container -->
   </div>

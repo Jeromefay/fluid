@@ -11,12 +11,20 @@
 |
 */
 
-Route::get('/', function () {
+/* Route::get('/', function () {
     return view('welcome');
-});
+}); */
 
+Route::get('/quiestfluid', function () {
+    return view('front.quiEstFluid');
+});
 Route::get('/', 'FrontController@index');
 Route::get('/expo', 'FrontController@showExpo');
+Route::get('/workshop', 'FrontController@showWorkshop');
+Route::get('/excursion', 'FrontController@showExcursion');
+Route::get('/soiree', 'FrontController@showSoiree');
+
+Route::get('/shop', 'FrontController@showShop');
 
 /* CONTACT */
 Route::get('/contact', 'ContactController@show');
@@ -32,6 +40,7 @@ Route::resource('membre', 'MembreController')->middleware('auth');
 Route::group(['prefix'=>'admin'],function(){
     Route::resource('/', 'AdminController')->middleware('auth');
     Route::resource('partenaire', 'PartenaireController')->middleware('auth');
+    Route::resource('produits', 'ProduitsController')->middleware('auth');
     Route::resource('utilisateurs', 'UtilisateursController')->middleware('auth');
 });
 

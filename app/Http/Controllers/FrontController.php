@@ -28,9 +28,28 @@ class FrontController extends Controller
     }
 
     public function showExpo(){
-        $events = Event::all()->where('category_id', 1);
-        $expos = Event::all()->where('category_id', 3);
-        return view('front.expo', compact('events', 'expos'));
+        $expos = Event::all()->where('category_id', 1);
+        return view('front.expo', compact('expos'));
+    }
+
+    public function showWorkshop(){
+        $workshops = Event::all()->where('category_id', 2);
+        return view('front.workshop', compact('workshops'));
+    }
+
+    public function showExcursion(){
+        $excursions = Event::all()->where('category_id', 3);
+        return view('front.excursion', compact('excursions'));
+    }
+
+    public function showSoiree(){
+        $soirees = Event::all()->where('category_id', 4);
+        return view('front.soiree', compact('soirees'));
+    }
+
+    public function showShop(){
+        $products = Product::all();
+        return view('front.shop', compact('products'));
     }
 
 }

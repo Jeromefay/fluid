@@ -10,6 +10,9 @@
     <a class="nav-link active tabAdmin" href="{{url('/admin/partenaire')}}">Liste des partenaires</a>
   </li>
   <li class="nav-item">
+    <a class="nav-link tabAdmin" href="{{url('/admin/produits')}}">Liste des utilisateurs</a>
+  </li>
+  <li class="nav-item">
     <a class="nav-link tabAdmin" href="{{url('/admin/utilisateurs')}}">Liste des utilisateurs</a>
   </li>
 </ul>

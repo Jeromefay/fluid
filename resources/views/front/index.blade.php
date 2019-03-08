@@ -17,6 +17,24 @@
   </header>
 <!-- FIN HEADER -->
 
+<div class="container">
+    <div class="row centered mt mb">
+      <h1>Les évènements</h1>
+
+      <div class="col-lg-4 col-md-4 col-sm-4 gallery">
+        <a href="works.html"><img src="{{asset('front/logo_noir.jpg')}}" class="img-responsive"></a>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-4 gallery">
+        <a href="works.html"><img src="{{asset('front/logo_bleu.jpg')}}" class="img-responsive"></a>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-4 gallery">
+        <a href="works.html"><img src="{{asset('front/logo_noir.jpg')}}" class="img-responsive"></a>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-4 gallery">
+        <a href="works.html"><img src="{{asset('front/logo_bleu.jpg')}}" class="img-responsive"></a>
+      </div>
+    </div>
+  </div>
 
 <!-- PARTENAIRES -->
 
@@ -28,7 +46,7 @@
       @foreach ($partners as $partner)
         <div class="col-lg-4">
           <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-            <img class="img-fluid rounded-circle mb-3" src="{{asset('images/'.$partner->picturePartner->url_img_partners)}}" alt="$partner->picturePartner->titre">
+            <img class="img-fluid mb-3" src="{{asset('images/'.$partner->picturePartner->url_img_partners)}}" alt="$partner->picturePartner->titre">
             <h5>{{$partner->nom}}</h5>
             <p class="font-weight-light mb-0">{{$partner->description}}</p>
           </div>
