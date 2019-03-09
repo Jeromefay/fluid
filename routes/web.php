@@ -1,5 +1,6 @@
 <?php
-
+use Illuminate\Http\Request;
+use App\Order;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,8 +34,13 @@ Route::post('/contact',  'ContactController@mailToAdmin');
 
 Auth::routes();
 
+Route::group(['prefix'=>'membre'],function(){
+    Route::resource('/', 'MembreController')->middleware('auth');
+});
 
-Route::resource('membre', 'MembreController')->middleware('auth');
+
+
+
 
 
 Route::group(['prefix'=>'admin'],function(){

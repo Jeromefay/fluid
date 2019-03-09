@@ -30,7 +30,7 @@ class UserTableSeeder extends Seeder
 
             //Ajout des images
             $link = str_random(12).'.jpg'; // hash de lien pour la sécurité (injection de scripts de protection)
-            $file = file_get_contents('http://placeimg.com/640/480/arch'); 
+            $file = file_get_contents('http://placeimg.com/640/480/people'); 
             Storage::disk('local')->put($link, $file);
 
             $user->update([

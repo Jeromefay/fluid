@@ -20,7 +20,7 @@ $factory->define(User::class, function (Faker $faker) {
         'nom' => $faker->name,
         'email' => $faker->unique()->safeEmail,
         'prenom' => $faker->firstName,
-        'competence_1' => $faker->word,
+        'competence_1' => serialize($faker->words),
         'competence_2' => $faker->word,
         'competence_3' => $faker->word,
         'adresse' => $faker->streetAddress,

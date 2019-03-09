@@ -18,29 +18,76 @@
   </div>
 </div>
 <nav class="navbar navbar-light bg-light">
-  <form class="form-inline">
-    <input class="form-control mr-sm-2" type="search" placeholder="SeChercher par compétence" aria-label="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Chercher</button>
-  </form>
+    <input class="form-control mr-sm-2" type="text" placeholder="Chercher par compétence" aria-label="Search" name="search" id="search">
 </nav>
-<div class="container px-0">
-  <div class="pp-gallery">
-    <div class="card-columns">
-      @foreach($users as $user)
-      <div class="card" data-groups="">
-          <figure class="pp-effect"><img class="img-fluid" src="{{asset('images/'.$user->url_img_user)}}" alt="Nature"/>
-            <figcaption>
-            <a href="image-detail.html"><div class="h4">{{$user->name}}</div></a>
-              <p>{{$user->competence_1}}</p>
-              <p>{{$user->competence_2}}</p>
-              <p>{{$user->competence_3}}</p>
-            </figcaption>
-          </figure>
+
+
+<section id="team" class="pb-5">
+    <div class="container">
+        <h5 class="section-title h1">Nos membres</h5>
+        <div class="row">
+            <!-- Team member -->
+            
+            @foreach($users as $user)
+            @php
+            
+            unserialize($user->competence_1)
+            
+            @endphp
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="image-flip">
+                    <div class="mainflip">
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <p><img class=" img-fluid" src="{{asset('images/'.$user->url_img_user)}}" alt="card image"></p>
+                                    <h4 class="card-title">  </h4>
+                                    <p class="card-text">This is basic card with image on top, title, description and button.</p>
+                                    <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="backside">
+                            <div class="card">
+                                <div class="card-body text-center mt-4">
+                                    <h4 class="card-title">Sunlimetech</h4>
+                                    <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p>
+                                    <ul class="list-inline">
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                              <i class="fab fa-facebook-f"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                              <i class="fab fa-twitter"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                              <i class="far fa-envelope"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                              <i class="fab fa-instagram"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+      @endforeach
+            <!-- ./Team member -->
+            
+
         </div>
-        @endforeach
-      
     </div>
-  </div>
-</div>
+</section>
 {{$users->links()}}
+
+
 @endsection

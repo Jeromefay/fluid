@@ -14,7 +14,7 @@ class MembreController extends Controller
      */
     public function index()
     {
-        $users = User::paginate(10);
+        $users = User::orderBy('nom', 'asc')->paginate(10);
         return view('front.membre.index', compact('users'));
     }
 
