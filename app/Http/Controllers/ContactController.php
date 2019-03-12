@@ -8,7 +8,8 @@ Class ContactController extends Controller
 {
 	public function show() 
 	{
-		return view('contact');
+		$user = \Auth::user();
+		return view('contact', compact('user'));
 	}
 	public function mailToAdmin(ContactFormRequest $message, Admin $admin)
 	{        //send the admin an notification

@@ -17,6 +17,16 @@
   </header>
 <!-- FIN HEADER -->
 
+
+			
+		<h2>{{$expos->titre}}</h2>
+				
+		<p>{{$expos->description}}</p>
+			
+		
+
+
+
 <div class="container">
     <div class="row centered mt mb">
       <h1>Les évènements</h1>

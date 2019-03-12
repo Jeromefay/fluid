@@ -16,34 +16,37 @@ class FrontController extends Controller
     public function __construct(){
         view()->composer('partials.menu', function($view){
             $events = Event::all();
-            $view->with('events', $events );
+            $user = \Auth::user();
+            $view->with('user', $user);
         });
     }
 
     public function index(){
-        $products = Product::all();
+        $expos = Event::where('category_id', 1)->Published()->orderBy('date', 'asc')->first();
+        $workshops = Event::where('category_id', 2)->Published()->orderBy('date', 'asc')->first();
+        $excursions = Event::where('category_id', 3)->Published()->orderBy('date', 'asc')->first();
+        $soirees = Event::where('category_id', 4)->Published()->orderBy('date', 'asc')->first();
         $partners = Partner::all();
-        $events = Event::all();
-        return view('front.index', compact('products', 'partners', 'events'));
+        return view('front.index', compact('expos', 'partners', 'workshops', 'excursions', 'soirees'));
     }
 
     public function showExpo(){
-        $expos = Event::all()->where('category_id', 1);
+        $expos = Event::Published()->where('category_id', 1)->get();
         return view('front.expo', compact('expos'));
     }
 
     public function showWorkshop(){
-        $workshops = Event::all()->where('category_id', 2);
+        $workshops = Event::Published()->where('category_id', 2)->get();
         return view('front.workshop', compact('workshops'));
     }
 
     public function showExcursion(){
-        $excursions = Event::all()->where('category_id', 3);
+        $excursions = Event::Published()->where('category_id', 3)->get();
         return view('front.excursion', compact('excursions'));
     }
 
     public function showSoiree(){
-        $soirees = Event::all()->where('category_id', 4);
+        $soirees = Event::Published()->where('category_id', 4)->get();
         return view('front.soiree', compact('soirees'));
     }
 

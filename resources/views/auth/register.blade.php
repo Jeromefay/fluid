@@ -4,11 +4,12 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+            <!-- <div class="card"> -->
+                <!-- <div class="card-header">{{ __('Register') }}</div> -->
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <iframe id="haWidget" allowtransparency="true" scrolling="auto" src="https://www.helloasso.com/associations/fluid/adhesions/-adhesion-collectif-fluid/widget" style="width:100%;height:750px;border:none;" onload="window.scroll(0, this.offsetTop)"></iframe>
+                    <!-- <form method="POST" action="{{ route('register') }}">
                         @csrf
 
                         <div class="form-group row">
@@ -68,9 +69,9 @@
                                 </button>
                             </div>
                         </div>
-                    </form>
+                    </form> -->
                 </div>
-            </div>
+            <!-- </div> -->
         </div>
     </div>
 </div>

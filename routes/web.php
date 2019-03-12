@@ -34,20 +34,20 @@ Route::post('/contact',  'ContactController@mailToAdmin');
 
 Auth::routes();
 
-Route::group(['prefix'=>'membre'],function(){
-    Route::resource('/', 'MembreController')->middleware('auth');
+
+Route::group(['prefix'=>'espace'],function(){
+    Route::resource('/membre', 'MembreController')->middleware('auth');
 });
-
-
-
-
 
 
 Route::group(['prefix'=>'admin'],function(){
-    Route::resource('/', 'AdminController')->middleware('auth');
+    Route::resource('admin', 'AdminController')->middleware('auth');
     Route::resource('partenaire', 'PartenaireController')->middleware('auth');
-    Route::resource('produits', 'ProduitsController')->middleware('auth');
     Route::resource('utilisateurs', 'UtilisateursController')->middleware('auth');
+    Route::resource('produits', 'ProduitsController')->middleware('auth');
+    Route::resource('/event', 'EventController')->middleware('auth');
 });
+
+
 
 Route::get('/home', 'HomeController@index')->name('home');

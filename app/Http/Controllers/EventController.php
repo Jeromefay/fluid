@@ -9,7 +9,7 @@ use App\Partner;
 use App\Product;
 use App\User;
 
-class AdminController extends Controller
+class EventController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,11 +17,13 @@ class AdminController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {        
+    {
+        $events = Event::paginate(5);
+        
 
         if (\Auth::user()->is_admin == 1)
         {
-            return view('back.index', compact('users'));
+            return view('back.event.index', compact('products', 'partners', 'events', 'users'));
         }
 
         return redirect()->guest('/');
@@ -60,19 +62,19 @@ class AdminController extends Controller
             'status' => 'in:Publié,Brouillon',
             'prix' => 'required',
             'prix_adherent' => 'required',
-             'date' => "date:Y-m-d|nullable",
+             'date' => "date:Y-m-d|required",
             'category_id' => 'integer',
             'lien_evenement' => 'required|string',
             'picture' => 'image|max:3000', 
         ]);
-        $event = Event::create($request->all());
+        $event = Event::update($request->all());
         
         $im = $request->file('picture');
         if (!empty($im)) {
             
             $link = $request->file('picture')->store('');
             // mettre à jour la table picture pour le lien vers l'image dans la base de données
-            $event->pictureEvent()->create([
+            $event->pictureEvent()->update([
                 'url_img_event' => $link,
                 'titre' => 'default'
             ]);

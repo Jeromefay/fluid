@@ -19,14 +19,11 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('admin'),
             'is_admin' => 1,
             'competence_1' => 'peinture',
-            'competence_2' => 'photo',
-            'competence_3' => 'claquettes',
-
             ]
         ]);
         
         //Création de 20 users à partir de la factory
-        factory(App\User::class, 20)->create()->each(function($user){
+        factory(App\User::class, 10)->create()->each(function($user){
 
             //Ajout des images
             $link = str_random(12).'.jpg'; // hash de lien pour la sécurité (injection de scripts de protection)

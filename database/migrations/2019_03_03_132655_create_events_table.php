@@ -18,7 +18,9 @@ class CreateEventsTable extends Migration
             $table->string('titre', 100);
             $table->text('description');
             $table->decimal('prix', 6, 2);
-            $table->dateTime('date');
+            $table->decimal('prix_adherent', 6, 2);
+            $table->date('date');
+            $table->text('lien_evenement')->nullable();
             $table->enum('status', ['Publié', 'Brouillon']);
             $table->timestamps();
         });

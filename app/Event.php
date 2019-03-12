@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Event extends Model
 {
     protected $fillable = [
-        'titre', 'description', 'category_id', 'status', 'prix'
+        'titre', 'description', 'category_id', 'status', 'prix', 'date', 'prix_adherent', 'lien_evenement', 'url_img_event'
     ];
 
     public function setCategoryIdAttribute($value){
@@ -26,4 +26,9 @@ class Event extends Model
     public function pictureEvent(){
         return $this->hasOne(PictureEvent::class);
     }
+
+    public function scopePublished($query){
+        return $query->where('status', 'Publié');
+    }
+
 }

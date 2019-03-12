@@ -5,7 +5,7 @@
 <div id="contactwrap">
     <div class="container">
         <div class="text-center">
-          <h1 class="">CONTACTEZ FLUID !</h1>
+          <h1>CONTACTEZ FLUID !</h1>
         </div>
     </div>
     <!-- /container -->

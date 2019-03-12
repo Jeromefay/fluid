@@ -1,6 +1,8 @@
 @extends('layouts.master')
 
+
 @section('content')
+
 
 
 
@@ -17,8 +19,9 @@
     </div>
   </div>
 </div>
-<nav class="navbar navbar-light bg-light">
-    <input class="form-control mr-sm-2" type="text" placeholder="Chercher par compétence" aria-label="Search" name="search" id="search">
+<nav class="navbar navbar-white bg-white">
+    <input class="col-sm-4 " type="text" placeholder="Chercher par compétence" aria-label="Search" name="search" id="search">
+    <a href="">⭐ Afficher mes favoris</a>
 </nav>
 
 
@@ -28,22 +31,31 @@
         <div class="row">
             <!-- Team member -->
             
+            
+            
+            
             @foreach($users as $user)
-            @php
-            
-            unserialize($user->competence_1)
-            
-            @endphp
+           
             <div class="col-xs-12 col-sm-6 col-md-4">
                 <div class="image-flip">
                     <div class="mainflip">
                         <div class="frontside">
                             <div class="card">
                                 <div class="card-body text-center">
+                                <style>
+                                .toggle.ios, .toggle-on.ios, .toggle-off.ios { border-radius: 20px; }
+                                .toggle.ios .toggle-handle { border-radius: 20px; }
+                                </style>
+                                 
+                                <span>⭐</span>
                                     <p><img class=" img-fluid" src="{{asset('images/'.$user->url_img_user)}}" alt="card image"></p>
-                                    <h4 class="card-title">  </h4>
+                                    <h4 class="card-title"> {{$user->nom}}</h4>
                                     <p class="card-text">This is basic card with image on top, title, description and button.</p>
-                                    <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                                    @if($user->dispo == 'oui')
+                                <input class="toggle_membre" type="checkbox" data-toggle="toggle" data-style="ios" data-on="dispo 😀" checked disabled>
+                                @else
+                                <input class="toggle_membre" type="checkbox" data-toggle="toggle" data-style="ios" data-on="non dispo 😴" checked disabled>
+                                @endif
                                 </div>
                             </div>
                         </div>

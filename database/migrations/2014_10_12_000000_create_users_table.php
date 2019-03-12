@@ -20,8 +20,8 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique()->nullable();
             $table->decimal('is_admin', 1, 0)->default(0);
             $table->text('competence_1')->nullable();
-            $table->string('competence_2', 100)->nullable();
-            $table->string('competence_3', 100)->nullable();
+            $table->text('description')->nullable();
+            $table->enum('dispo', ['oui', 'non']);
             $table->string('adresse', 100)->nullable();
             $table->string('code_postal', 100)->nullable();
             $table->string('ville', 100)->nullable();

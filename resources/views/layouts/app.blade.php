@@ -19,7 +19,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body>
+<body style="background: url(https://hdqwalls.com/download/material-design-4k-2048x1152.jpg) no-repeat center; background-size: cover; color: #FFF; height: 100vh;">
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
@@ -72,7 +72,7 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="py-4" style="background: url(https://hdqwalls.com/download/material-design-4k-2048x1152.jpg) no-repeat center; background-size: cover; color: #FFF;">
             @yield('content')
         </main>
     </div>

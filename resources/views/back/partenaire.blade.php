@@ -1,21 +1,8 @@
-@extends('layouts.master')
+@extends('layouts.back')
 
 @section('content')
 
-<ul class="nav nav-tabs bg-dark">
-  <li class="nav-item">
-    <a class="nav-link tabAdmin" href="{{url('/admin')}}">Liste des évènements</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link active tabAdmin" href="{{url('/admin/partenaire')}}">Liste des partenaires</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link tabAdmin" href="{{url('/admin/produits')}}">Liste des utilisateurs</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link tabAdmin" href="{{url('/admin/utilisateurs')}}">Liste des utilisateurs</a>
-  </li>
-</ul>
+<
 
 <table class="table table-striped table-hover">
   <thead>
@@ -40,7 +27,7 @@
             <form class="delete" method="POST" action="{{route('partenaire.destroy', $partner->id)}}">
                 {{ method_field('DELETE') }}
                 {{ csrf_field() }}
-                <input class="btn btn-danger" type="submit" value="supprimer" >
+                <button class="fas fa-trash user-delete" type="submit" value="supprimer" >
             </form>
         </td>
     </tr>
