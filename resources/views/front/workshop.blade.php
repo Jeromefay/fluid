@@ -1,4 +1,4 @@
-@extends('layouts.event')
+@extends('layouts.master')
 
 @section('content')
 
@@ -10,6 +10,7 @@
 		<p class="event-paragraph">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ad maxime quas non consequuntur quo cumque. Doloremque illum sed dolores, fugit sequi provident assumenda nobis accusantium in architecto cumque id quas beatae officiis, error quisquam rerum praesentium quae quidem iusto voluptatum eveniet adipisci. Sunt consequatur quaerat reprehenderit voluptatem rerum totam!</p>
 	</div>
 		<div class="event imgWork2"></div>
+</div>
 </div><!-- fin header event --> 
 
 	<h3>Notre prochain événement</h3>
@@ -36,10 +37,11 @@
 		@foreach($workshops as $workshop)
 		<div class="passedEvent">
 			<img class="img-fluid" src="{{asset('images/'.$workshop->pictureEvent->url_img_event)}}" alt="{{asset('images/'.$workshop->pictureEvent->titre)}}">
-			<p class="text-white">{{$workshop->description}}</p>
+			<p>{{$workshop->description}}</p>
 		</div>
 		@endforeach
 	</div>
+</div>
 </div>
 
 
