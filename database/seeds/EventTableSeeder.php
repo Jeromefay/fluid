@@ -29,7 +29,7 @@ class EventTableSeeder extends Seeder
         Storage::disk('local')->delete(Storage::allFiles());
 
         //Création de 10 évènements à partir de la factory
-        factory(App\Event::class, 10)->create()->each(function($event){
+        factory(App\Event::class, 25)->create()->each(function($event){
             //association d'une catégorie à un évenement
             $category = App\Category::find(rand(1,4));
 

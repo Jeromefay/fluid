@@ -31,23 +31,32 @@ class FrontController extends Controller
     }
 
     public function showExpo(){
+        $event = Event::where('category_id', 1)->Published()->orderBy('date', 'asc')->first();
         $expos = Event::Published()->where('category_id', 1)->get();
-        return view('front.expo', compact('expos'));
+        return view('front.expo', compact('expos', 'event'));
+    }
+
+    public function showOneExpo(int $id){
+        $event = Event::find($id);
+        return view('front.OneExpo', compact('event'));
     }
 
     public function showWorkshop(){
+        $event = Event::where('category_id', 2)->Published()->orderBy('date', 'asc')->first();
         $workshops = Event::Published()->where('category_id', 2)->get();
-        return view('front.workshop', compact('workshops'));
+        return view('front.workshop', compact('workshops', 'event'));
     }
 
     public function showExcursion(){
+        $event = Event::where('category_id', 3)->Published()->orderBy('date', 'asc')->first();
         $excursions = Event::Published()->where('category_id', 3)->get();
-        return view('front.excursion', compact('excursions'));
+        return view('front.excursion', compact('excursions', 'event'));
     }
 
     public function showSoiree(){
+        $event = Event::where('category_id', 4)->Published()->orderBy('date', 'asc')->first();
         $soirees = Event::Published()->where('category_id', 4)->get();
-        return view('front.soiree', compact('soirees'));
+        return view('front.soiree', compact('soirees', 'event'));
     }
 
     public function showShop(){

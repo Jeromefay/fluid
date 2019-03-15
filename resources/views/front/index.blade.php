@@ -28,19 +28,20 @@
 
 
 <div class="container">
-    <div class="row centered mt mb">
-      <h1>Les évènements</h1>
-
-      <div class="col-lg-4 col-md-4 col-sm-4 gallery">
+  <h1>Les évènements</h1>
+    
+  
+  <div class="row ">
+      <div class="col-lg-2 col-md-4 col-sm-4 gallery">
         <a href="works.html"><img src="{{asset('front/logo_noir.jpg')}}" class="img-responsive"></a>
       </div>
-      <div class="col-lg-4 col-md-4 col-sm-4 gallery">
+      <div class="col-lg-2 col-md-4 col-sm-4 gallery">
         <a href="works.html"><img src="{{asset('front/logo_bleu.jpg')}}" class="img-responsive"></a>
       </div>
-      <div class="col-lg-4 col-md-4 col-sm-4 gallery">
+      <div class="col-lg-2 col-md-4 col-sm-4 gallery">
         <a href="works.html"><img src="{{asset('front/logo_noir.jpg')}}" class="img-responsive"></a>
       </div>
-      <div class="col-lg-4 col-md-4 col-sm-4 gallery">
+      <div class="col-lg-2 col-md-4 col-sm-4 gallery">
         <a href="works.html"><img src="{{asset('front/logo_bleu.jpg')}}" class="img-responsive"></a>
       </div>
     </div>

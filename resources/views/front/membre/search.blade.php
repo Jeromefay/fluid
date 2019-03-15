@@ -4,7 +4,8 @@
 @section('content')
 
 
-
+<div class="page-content">
+        <div class="container">
 <div class="container pp-section">
   <div class="row">
     <div class="col-md-9 col-sm-12 px-0">
@@ -12,20 +13,9 @@
     </div>
   </div>
 </div>
-<div class="page-content">
-        <div class="container">
-        <div class="header-event">
-	<div class="event imgExpo1">
-		<p class="event-paragraph">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ad maxime quas non consequuntur quo cumque. Doloremque illum sed dolores, fugit sequi provident assumenda nobis accusantium in architecto cumque id quas beatae officiis, error quisquam rerum praesentium quae quidem iusto voluptatum eveniet adipisci. Sunt consequatur quaerat reprehenderit voluptatem rerum totam!</p>
-	</div>
-		<div class="event imgExpo2"></div>
-        <!-- FIN HEADER -->
-
 <nav class="navbar navbar-white bg-white">
-    <div>
-    <input class="col-sm-4 " type="text" placeholder="Chercher par compétence" aria-label="Search" name="search" id="search">
-    <input type="submit" class="btn btn-primary">
-    </div>
+    <input class="col-sm-4 " type="text" placeholder="Chercher par compétence" aria-label="Search" name="q" id="search">
+    <button type="submit" class="btn btn-default"></button>
     <a href="">⭐ Afficher mes favoris</a>
 </nav>
 
@@ -34,27 +24,33 @@
     <div class="container">
         <h5 class="section-title h1">Nos membres</h5>
         <div class="row">
-            <!-- Carte membre -->
+            <!-- Team member -->
+            
+            
+            
+            
             @foreach($users as $user)
+           
             <div class="col-xs-12 col-sm-6 col-md-4">
                 <div class="image-flip">
                     <div class="mainflip">
                         <div class="frontside">
                             <div class="card">
                                 <div class="card-body text-center">
-                                    <div class="cardMembre">
-                                        @if($user->dispo == 'oui')
-                                        <input type="checkbox" checked data-toggle="toggle" data-onstyle="primary" data-style="ios" data-on="." disabled>
-                                        @else
-                                        <input type="checkbox" checked data-toggle="toggle" data-onstyle="secondary" data-style="ios" data-off="." disabled>
-                                        @endif
-                                        <p>⭐</p>
-                                    </div>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, dolorem.</p>
+                                <style>
+                                .toggle.ios, .toggle-on.ios, .toggle-off.ios { border-radius: 20px; }
+                                .toggle.ios .toggle-handle { border-radius: 20px; }
+                                </style>
+                                 
+                                <span>⭐</span>
                                     <p><img class=" img-fluid" src="{{asset('images/'.$user->url_img_user)}}" alt="card image"></p>
                                     <h4 class="card-title"> {{$user->nom}}</h4>
-                                    <p class="card-text">{{$user->competence_1}}</p>
-                                    
+                                    <p class="card-text">This is basic card with image on top, title, description and button.</p>
+                                    @if($user->dispo == 'oui')
+                                <input class="toggle_membre" type="checkbox" data-toggle="toggle" data-style="ios" data-on="dispo 😀" checked disabled>
+                                @else
+                                <input class="toggle_membre" type="checkbox" data-toggle="toggle" data-style="ios" data-on="non dispo 😴" checked disabled>
+                                @endif
                                 </div>
                             </div>
                         </div>

@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
 body{
   background-color: #fff;
+  font-family: 'Nunito', sans-serif;
 }
 
 /* index */
@@ -68,6 +71,136 @@ body{
   }
 
 /* FIN NAVBAR */
+
+/* PAGES EVENTS */
+
+.paragraph{
+  color: #ff8470;
+  padding: 0;
+}
+
+.container-last-expo{
+  background-color: #ff8470;
+}
+.event{
+  
+  width: 100%;
+  height: 400px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: flex; /*  */
+  
+}
+
+.imgExpo1{
+  background-image: url(../front/expo/img_expo2.jpg);
+  justify-content: center;
+}
+
+.imgExpo2{
+  background-image: url(../front/expo/img_expo1.jpg);
+  margin-left: 52%;
+  margin-top: -10%;
+}
+
+.imgExcu1{
+  justify-content: center;
+  background-image: url(../front/excu/img_excu1.jpg);
+}
+
+.imgExcu2{
+  margin-left: 52%;
+  margin-top: -10%;
+  background-image: url(../front/excu/img_excu2.jpg);
+}
+
+.imgSoiree1{
+  justify-content: center;
+  background-image: url(../front/soiree/img_soiree1.jpg);
+} 
+
+.imgSoiree2{
+  margin-left: 52%;
+  margin-top: -10%;
+  background-image: url(../front/soiree/img_soiree2.jpg);
+}
+
+.imgWork1{
+  background-image: url(../front/workshop/img_work1.jpg);
+  justify-content: center;
+}
+
+.imgWork2{
+  background-image: url(../front/workshop/img_work2.jpg);
+  margin-left: 52%;
+  margin-top: -10%;
+}
+
+.header{
+  background-color: #192CB0;
+}
+
+h3{
+  margin: 3% 0;
+}
+
+.event-paragraph{
+  width: 60%;
+  align-self: center;
+  color: #ff8470;
+  font-weight: bold;
+  margin-left: 25%;
+}
+
+
+@media (max-width: 576px){
+  .imgExpo2 {
+      margin: 0;
+  }
+
+  .event-paragraph{
+    margin-left: 0;
+  }
+}
+
+/* Evenements Passés */
+
+.passedEvents{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.passedEvent{
+  display: flex;
+  width: 46%;
+  justify-content: flex-start;
+  border: 3px solid #ff8470;
+  border-radius: 2%;
+  background-color: #ff8470;
+  margin-top: 2%;
+}
+
+.passedEvent>img{
+  width: 225px;
+  height: 100%;
+}
+
+.passedEvent>p{
+  width: 50%;
+  padding-left: 2%;
+}
+
+@media (max-width: 576px){
+  .passedEvents {
+      flex-direction: column;
+  }
+
+  .passedEvent{
+    flex-direction: column;
+  }
+}
+
 
 /* PAGE CONTACT */
 
@@ -316,10 +449,12 @@ form button:hover{
   outline: none;
 }
 
+.toggle.ios, .toggle-on.ios, .toggle-off.ios { border-radius: 20px; }
+.toggle.ios .toggle-handle { border-radius: 20px; }
 .btn-primary {
   color: #fff;
-  background-color: #007b5e;
-  border-color: #007b5e !important;
+  background-color: #192CB0;
+  border-color: #192CB0 !important;
 }
 
 .toggle-on.btn {
@@ -328,8 +463,7 @@ form button:hover{
 
 .btn.btn-primary.toggle-on{
   text-align: left;
-  background: rgb(111,122,206);
-background: linear-gradient(90deg, rgba(111,122,206,1) 0%, rgba(38,49,171,1) 50%, rgba(111,122,206,1) 100%);
+  
 }
 
 section {
@@ -346,6 +480,12 @@ section .section-title {
 #team .card {
   border: none;
   background: #ffffff;
+}
+
+.cardMembre{
+  display: flex;
+  padding-top: 1rem;
+  justify-content: space-between;
 }
 
 

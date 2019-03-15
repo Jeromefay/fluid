@@ -21,7 +21,7 @@ class AdminController extends Controller
 
         if (\Auth::user()->is_admin == 1)
         {
-            return view('back.index', compact('users'));
+            return view('back.index');
         }
 
         return redirect()->guest('/');

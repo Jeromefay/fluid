@@ -2,37 +2,44 @@
 
 @section('content')
 
+<div class="container">
+<h1 class="mb-5">Les excursions</h1>
 
+<div class="header-event">
+	<div class="event imgExcu1">
+		<p class="event-paragraph">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ad maxime quas non consequuntur quo cumque. Doloremque illum sed dolores, fugit sequi provident assumenda nobis accusantium in architecto cumque id quas beatae officiis, error quisquam rerum praesentium quae quidem iusto voluptatum eveniet adipisci. Sunt consequatur quaerat reprehenderit voluptatem rerum totam!</p>
+	</div>
+		<div class="event imgExcu2"></div>
+</div><!-- fin header event --> 
 
-<section id="fh5co-work" data-section="work" class="animated">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12 section-heading text-center">
-				<h2 class="to-animate fadeInUp animated">Excursions</h2>
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2 subtext to-animate fadeInUp animated">
-						<h3>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-							there live the blind texts.</h3>
-					</div>
-				</div>
-			</div>
+	<h3>Notre prochain événement</h3>
+
+	<div class="row container-last-expo">
+    <div class="col-lg-4">
+			<a href="{{route('event', $event->id)}}">
+				<img class="img-fluid" src="{{asset('front/expo/logoExpo.jpg')}}" alt="">
+			</a>
+    </div>
+    <div class="col-lg-4 paragraph-last-expo font-weight-bold align-self-center text-white">
+			{{$event->description}}
 		</div>
+		<div class="col-lg-4 align-self-center">
+		<button type="button" class="btn btn-outline-primary font-weight-bold">Prix membre: {{$event->prix_adherent}}</button><br><br>
+		<button type="button" class="btn btn-outline-primary font-weight-bold">Prix non-membre: {{$event->prix}}</button>
+		</div>
+	</div>
 
-		<div class="row row-bottom-padded-sm">
-			@foreach($excursions as $excursion)
-			<div class="col-md-4 col-sm-6 col-xxs-12">
-				<a href="images/work_1.jpg" class="fh5co-project-item image-popup to-animate fadeInUp animated">
-					<img src="{{asset('images/'.$excursion->pictureEvent->url_img_event)}}" alt="$excursion->pictureEvent->titre"
-						class="img-responsive">
-					<div class="fh5co-text">
-						<h2>{{$excursion->titre}}</h2>
-				</a>
-				<p>{{$excursion->description}}</p>
-			</div>
+	<h3>Nos événements passés</h3>
+
+<div class="container">
+	<div class="passedEvents">
+		@foreach($excursions as $excursion)
+		<div class="passedEvent">
+			<img class="img-fluid" src="{{asset('images/'.$excursion->pictureEvent->url_img_event)}}" alt="{{asset('images/'.$excursion->pictureEvent->titre)}}">
+			<p class="text-white">{{$excursion->description}}</p>
 		</div>
 		@endforeach
 	</div>
-</section>
-
+</div>
 
 @endsection

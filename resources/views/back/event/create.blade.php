@@ -6,7 +6,7 @@
 <div class="row" id='create-event'>
             <div class="col-md-6">
                 <h1>Créer un Évènement :  </h1>
-                <form action="{{route('store')}}" method="post" enctype="multipart/form-data">
+                <form action="{{route('admin.store')}}" method="post" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <div class="form">
                             

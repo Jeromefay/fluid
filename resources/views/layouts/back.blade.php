@@ -39,7 +39,6 @@
           </ul>
         </div>
 
-        <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
         <div class="collapse navbar-collapse navbar-ex1-collapse" style="background-color: #616060; border:1px solid #616060;">
             <ul class="nav navbar-nav side-nav">
               <a href="{{url('/')}}"><img class="logostyle" src="{{asset('front/logoFluid.svg')}}" alt="LOGO"></a>
