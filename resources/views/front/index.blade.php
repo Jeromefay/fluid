@@ -65,46 +65,40 @@
       <img src="{{asset('front/txtEnMars.svg')}}" href="works.html">
   </div>
 </article>
-<!-- 		
-<section class="sectionEvenements">
-<h2>Evénements</h2>
-<article class="evenements">
-    <div class="logoExpo">
-       <img src="{{asset('front/logoExpoVecteur.svg')}}" href="works.html">
-       <img src="{{asset('front/imgExpo.jpg')}}" href="works.html">
-       <img src="{{asset('front/txtTeamLabVecteur.svg')}}" href="works.html">
-    </div>
-      <div class="logoExpo">
-        <img src="{{asset('front/logoWorkshopVecteur.svg')}}" href="works.html">
-        <img src="{{asset('front/imgWorkshop.jpg')}}" href="works.html">
-        <img src="{{asset('front/txtRisographieVecteur.svg')}}" href="works.html">
-    </div>
-</article>
-<article class="evenements 2">
-    <div class="logoExpo">
-       <img src="{{asset('front/logoExcursionVecteur.svg')}}" href="works.html">
-       <img src="{{asset('front/imgExpo.jpg')}}" href="works.html">
-       <img src="{{asset('front/txtAlvarAlto.svg')}}" href="works.html">
-    </div>
-<div class="logoExpo 2">
-        <img src="{{asset('front/logoEvent.Vecteursvg.svg')}}" href="works.html">
-       <img src="{{asset('front/imgWorkshop.jpg')}}" href="works.html">
-       <img src="{{asset('front/txtRisographieVecteur.svg')}}" href="works.html">
-</div>
-</article>
-</section> -->
 
 <section class="sectionPartenaires">
 <h2>Partenaires</h2>
+<!-- SECTION PARTENAIRE -->
+<div uk-slider="center: true">
 
-<div class="card-carousel">
-  @foreach ($partners as $partner)
-    <div class="my-card"><img src="{{asset('images/'.$partner->picturePartner->url_img_partners)}}" alt="{{$partner->picturePartner->titre}}">
-    <p>{{$partner->nom}}</p>
-      <a href="https://www.google.fr"><p>{{$partner->description}}</p></a>
+    <div class="widthPartenaires uk-position-relative uk-visible-toggle uk-light container" tabindex="-1">
+
+        <ul class="uk-slider-items uk-child-width-1-2@s uk-grid">
+          @foreach ($partners as $partner)
+            <li>
+                <div class="uk-card uk-card-default">
+                    <div class="uk-card-media-top">
+                        <img class="imgPartenaires"  src="{{asset('images/'.$partner->picturePartner->url_img_partners)}}">
+                    </div>
+                    <div class="uk-card-body">
+                        <h3 class="uk-card-title">{{$partner->nom}}</h3>
+                        <p>{{$partner->description}}</p>
+                    </div>
+                </div>
+            </li>
+            @endforeach
+        </ul>
+
+        <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+        <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+
     </div>
-  @endforeach
+
+    <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>
+
 </div>
+
+<!-- FIN PARTENAIRE -->
 
 </section>
 
@@ -120,9 +114,9 @@
 
 @section('scripts')
 @parent
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/instafeed.js/1.4.1/instafeed.min.js"></script>
+<script src="{{asset('js/uikit.min.js')}}"></script>
+<script src="{{asset('js/uikit-icons.min.js')}}"></script>
 <script src="{{asset('js/carousel-bootstrap.js')}}"></script>
 <script src="{{asset('js/instagram.js')}}"></script>
-<script src="{{asset('js/carousel-partenaire.js')}}"></script>
 @endsection

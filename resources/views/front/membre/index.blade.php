@@ -44,9 +44,15 @@
                                 <div class="card-body text-center">
                                     <div class="cardMembre">
                                         @if($user->dispo == 'oui')
-                                        <input type="checkbox" checked data-toggle="toggle" data-onstyle="primary" data-style="ios" data-on="." disabled>
+                                        <label class="switch">
+                                            <input type="checkbox" checked disabled>
+                                            <span class="sliderMembre round"></span>
+                                        </label>
                                         @else
-                                        <input type="checkbox" checked data-toggle="toggle" data-onstyle="secondary" data-style="ios" data-off="." disabled>
+                                        <label class="switch">
+                                            <input type="checkbox" disabled>
+                                            <span class="sliderMembre round"></span>
+                                        </label>
                                         @endif
                                         <p>⭐</p>
                                     </div>
@@ -104,5 +110,5 @@
 
 @section('scripts')
     @parent
-    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+    <script src="{{asset('js/membre.js')}}"></script>
 @endsection

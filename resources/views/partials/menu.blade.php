@@ -1,5 +1,5 @@
-<div class="rejoinsLeCollectif">
-  <span class="textRejoinsLeCollectif">Rejoins le collectif Fluid !</span>
+<div id="ancre" class="rejoinsLeCollectif">
+  <a target="_blank" href="{{url('/register')}}" class="textRejoinsLeCollectif">Rejoins le collectif Fluid !</a>
 </div>
 
 <nav class="navbar navbar-expand-lg navbar-white bg-white sticky-top">
@@ -34,11 +34,11 @@
         <a class="nav-link font-weight-bold text-uppercase {{ Request::is('contact') ? 'active' : 'colorHeader' }}" href="{{url('/contact')}}">Contact</a>
       </li>
       <li class="nav-item">
-        <a href="#"><img src="{{asset('front/logoInstagram.png')}}"> </a>
-</li>
-<li class="nav-item logoFaceBook">
-<a href="#"><img src="{{asset('front/logoFaceBook.jpg')}}"> </a>
-</li>
+        <a target="_blank" href="https://insta-stalker.com/profile/fluid_flot_graphique/%22%3E"><img src="{{asset('front/logoInstagram.png')}}"> </a>
+      </li>
+      <li class="nav-item logoFaceBook">
+        <a targer="_blank" href="https://www.facebook.com/groups/1797643553621438/%22%3E"><img src="{{asset('front/logoFaceBook.jpg')}}"> </a>
+      </li>
     </ul>
     <ul class="nav navbar-nav navbar-right nav-pills">
 

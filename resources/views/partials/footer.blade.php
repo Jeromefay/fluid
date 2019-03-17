@@ -24,3 +24,7 @@
         <li><a class="menuFooterBefore" href="#">Design by Chloé & JS Studio</a></li>
     </ul>
 </div>
+
+<div id="top" title="Revenir en haut">
+        <a href="#ancre"><i class="fas fa-arrow-circle-up"></i></a>
+</div>

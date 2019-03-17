@@ -6,5 +6,7 @@
     "/js/instagram.js": "/js/instagram.js",
     "/js/membre.js": "/js/membre.js",
     "/js/menu.js": "/js/menu.js",
-    "/js/shop.js": "/js/shop.js"
+    "/js/shop.js": "/js/shop.js",
+    "/js/uikit-icons.js": "/js/uikit-icons.js",
+    "/js/uikit.min.js": "/js/uikit.min.js"
 }
