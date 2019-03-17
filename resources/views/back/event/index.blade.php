@@ -2,12 +2,9 @@
 
 @section('content')
 
-<br><br>
-<div class="text-right">
-  <a href="{{route('event.create')}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Ajouter un événement</a>
-</div>
 
-<table class="table table-striped table-hover">
+
+<table class="table table-striped table-hover mt-5">
   <thead>
     <tr>
       <th scope="col">Titre</th>
@@ -45,6 +42,10 @@
     @endforeach
   </tbody>
 </table>
+
+<div class="text-right mt-5">
+  <a href="{{route('event.create')}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Ajouter un événement</a>
+</div>
 
 {{$events->links()}}
 

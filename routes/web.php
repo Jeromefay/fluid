@@ -20,6 +20,9 @@ Route::get('/quiestfluid', function () {
     $user = \Auth::user();
     return view('front.quiEstFluid', compact('user'));
 });
+
+Route::post('/newsletter', 'NewsletterController@store');
+
 Route::get('/', 'FrontController@index');
 Route::get('/expo', 'FrontController@showExpo');
 Route::get('/expo/event/{id}', 'FrontController@showOneExpo')->name('event');

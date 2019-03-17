@@ -11,7 +11,7 @@
     <!-- /container -->
   </div>
 
-<div class="bg-dark">
+<div class="bg-white">
 	@if(session('message'))
 	<div class="alert alert-warning alert-dismissible fade show" role="alert">
 		<strong>{{ session('message') }}</strong>
@@ -21,7 +21,7 @@
 	</div>
 @endif
 	
-	<div class="col-md-12 col-md-offset-6 text-white">
+	<div class="col-md-6 col-md-offset-6 text-dark container">
 		<form class="form-horizontal" method="POST" action="/contact" role="form">
 			{{ csrf_field() }} 
 				<div class="form-group">
@@ -40,7 +40,7 @@
 				</div>
 
 				<div class="form-group">
-					<button type="submit" class="btn" value="Envoyer">Envoyer</button>
+					<button type="submit" class="btn btn-primary" value="Envoyer">Envoyer</button>
 				</div>
 		</form>
 	</div>

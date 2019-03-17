@@ -43,16 +43,16 @@
             <ul class="nav navbar-nav side-nav">
               <a href="{{url('/')}}"><img class="logostyle" src="{{asset('front/logoFluid.svg')}}" alt="LOGO"></a>
                 <li>
-                   <a class="#" href="{{url('/admin/event')}}" data-toggle="" data-target="#submenu-1"><span style="color:white;">Liste des évènements</span></a>
+                   <a href="{{url('/admin/event')}}" data-toggle="" data-target="#submenu-1"><span class="{{ Request::is('admin/event') ? 'active' : 'colorHeader' }}">Liste des évènements</span></a>
                 </li>
                 <li>
-                    <a class="#" href="{{url('/admin/produits')}}" data-target="#submenu-1"><span style="color:white;">Liste des produits </span></a>
+                    <a href="{{url('/admin/produits')}}" data-target="#submenu-1"><span class="{{ Request::is('admin/produits') ? 'active' : 'colorHeader' }}">Liste des produits </span></a>
                 </li>
                 <li>
-                    <a class="#" href="{{url('/admin/partenaire')}}" data-toggle="" data-target="#submenu-1"><span style="color:white;">Liste des partenaires</span></a>
+                    <a href="{{url('/admin/partenaire')}}" data-toggle="" data-target="#submenu-1"><span class="{{ Request::is('admin/partenaire') ? 'active' : 'colorHeader' }}">Liste des partenaires</span></a>
                 </li>
                 <li>
-                    <a class="#" href="{{url('/admin/utilisateurs')}}" data-toggle="" data-target="#submenu-1"><span style="color:white;">Liste des utilsateurs</span></a>
+                    <a href="{{url('/admin/utilisateurs')}}" data-toggle="" data-target="#submenu-1"><span class="{{ Request::is('admin/utilisateurs') ? 'active' : 'colorHeader' }}">Liste des utilsateurs</span></a>
                 </li>
             </ul>
         </div>

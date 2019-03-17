@@ -81,48 +81,49 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/js/menu.js":
-/*!******************************!*\
-  !*** ./resources/js/menu.js ***!
-  \******************************/
+/***/ "./resources/js/instagram.js":
+/*!***********************************!*\
+  !*** ./resources/js/instagram.js ***!
+  \***********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-$(document).ready(function () {
-  $("#inpt_search").on('focus', function () {
-    $(this).parent('label').addClass('active');
-  });
-  $("#inpt_search").on('blur', function () {
-    if ($(this).val().length == 0) $(this).parent('label').removeClass('active');
-  });
-  $(window).scroll(function () {
-    var scroll = $(window).scrollTop();
-
-    if (scroll > 50) {
-      $('.navbar-brand').addClass('scrolled');
+var loadButton = document.getElementById('load-more');
+var feed = new Instafeed({
+  get: 'user',
+  userId: '7983810479',
+  accessToken: '7983810479.1677ed0.aaadb05b044548f48aed1794e16533ca',
+  limit: 14,
+  // every time we load more, run this function
+  after: function after() {
+    // disable button if no more results to load
+    if (!this.hasNext()) {
+      loadButton.setAttribute('disabled', 'disabled');
     }
+  }
+}); // bind the load more button
 
-    if (scroll <= 0) {
-      $('.navbar-brand').removeClass('scrolled');
-    }
-  });
-});
+loadButton.addEventListener('click', function () {
+  feed.next();
+}); // run our feed!
+
+feed.run();
 
 /***/ }),
 
-/***/ 1:
-/*!************************************!*\
-  !*** multi ./resources/js/menu.js ***!
-  \************************************/
+/***/ 2:
+/*!*****************************************!*\
+  !*** multi ./resources/js/instagram.js ***!
+  \*****************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\wamp64\www\fluid_test\fluid\resources\js\menu.js */"./resources/js/menu.js");
+module.exports = __webpack_require__(/*! C:\wamp64\www\fluid_test\fluid\resources\js\instagram.js */"./resources/js/instagram.js");
 
 
 /***/ })

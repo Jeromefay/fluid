@@ -81,48 +81,35 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/js/menu.js":
+/***/ "./resources/js/shop.js":
 /*!******************************!*\
-  !*** ./resources/js/menu.js ***!
+  !*** ./resources/js/shop.js ***!
   \******************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
 $(document).ready(function () {
-  $("#inpt_search").on('focus', function () {
-    $(this).parent('label').addClass('active');
-  });
-  $("#inpt_search").on('blur', function () {
-    if ($(this).val().length == 0) $(this).parent('label').removeClass('active');
-  });
-  $(window).scroll(function () {
-    var scroll = $(window).scrollTop();
-
-    if (scroll > 50) {
-      $('.navbar-brand').addClass('scrolled');
-    }
-
-    if (scroll <= 0) {
-      $('.navbar-brand').removeClass('scrolled');
-    }
+  $(".fancybox").fancybox({
+    openEffect: "none",
+    closeEffect: "none"
   });
 });
 
 /***/ }),
 
-/***/ 1:
+/***/ 5:
 /*!************************************!*\
-  !*** multi ./resources/js/menu.js ***!
+  !*** multi ./resources/js/shop.js ***!
   \************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\wamp64\www\fluid_test\fluid\resources\js\menu.js */"./resources/js/menu.js");
+module.exports = __webpack_require__(/*! C:\wamp64\www\fluid_test\fluid\resources\js\shop.js */"./resources/js/shop.js");
 
 
 /***/ })

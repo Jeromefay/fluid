@@ -12,4 +12,10 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
+mix.js('resources/js/menu.js', 'public/js')
+mix.js('resources/js/instagram.js', 'public/js')
+mix.js('resources/js/membre.js', 'public/js')
+mix.js('resources/js/carousel-bootstrap.js', 'public/js')
+mix.js('resources/js/shop.js', 'public/js')
+mix.js('resources/js/bootstrap.js', 'public/js')
    .sass('resources/sass/app.scss', 'public/css');

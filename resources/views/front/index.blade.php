@@ -38,7 +38,34 @@
     <span class="sr-only">Next</span>
   </a>
 </div> 
-		
+
+  <h2>Evénements</h2>
+
+<article class="evenements">
+  <div class="evenement eventExpo">
+    <img src="{{asset('front/logoExpoVecteur.svg')}}" href="works.html">
+    <img src="{{asset('front/imgExpo.jpg')}}" href="works.html">
+    <img src="{{asset('front/txtTeamLabVecteur.svg')}}" href="works.html">
+  </div>
+  <div class="evenement eventWorkshop">
+    <img src="{{asset('front/logoWorkshopVecteur.svg')}}" href="works.html">
+    <img src="{{asset('front/imgWorkshop.jpg')}}" href="works.html">
+    <img src="{{asset('front/txtRisographieVecteur.svg')}}" href="works.html">
+  </div>
+</article>
+<article class="evenements">
+  <div class="evenement eventExcursion">
+      <img src="{{asset('front/logoExcursionVecteur.svg')}}" href="works.html">
+      <img src="{{asset('front/imgExpo.jpg')}}" href="works.html">
+      <img src="{{asset('front/txtAlvarAlto.svg')}}" href="works.html">
+  </div>
+  <div class="evenement eventEvent">
+      <img src="{{asset('front/logoEvent.Vecteursvg.svg')}}" href="works.html">
+      <img src="{{asset('front/imgWorkshop.jpg')}}" href="works.html">
+      <img src="{{asset('front/txtEnMars.svg')}}" href="works.html">
+  </div>
+</article>
+<!-- 		
 <section class="sectionEvenements">
 <h2>Evénements</h2>
 <article class="evenements">
@@ -46,33 +73,35 @@
        <img src="{{asset('front/logoExpoVecteur.svg')}}" href="works.html">
        <img src="{{asset('front/imgExpo.jpg')}}" href="works.html">
        <img src="{{asset('front/txtTeamLabVecteur.svg')}}" href="works.html">
-</div>
-<div class="logoExpo">
-<img src="{{asset('front/logoWorkshopVecteur.svg')}}" href="works.html">
-       <img src="{{asset('front/imgWorkshop.jpg')}}" href="works.html">
-       <img src="{{asset('front/txtRisographieVecteur.svg')}}" href="works.html">
-</div>
+    </div>
+      <div class="logoExpo">
+        <img src="{{asset('front/logoWorkshopVecteur.svg')}}" href="works.html">
+        <img src="{{asset('front/imgWorkshop.jpg')}}" href="works.html">
+        <img src="{{asset('front/txtRisographieVecteur.svg')}}" href="works.html">
+    </div>
 </article>
 <article class="evenements 2">
     <div class="logoExpo">
        <img src="{{asset('front/logoExcursionVecteur.svg')}}" href="works.html">
        <img src="{{asset('front/imgExpo.jpg')}}" href="works.html">
        <img src="{{asset('front/txtAlvarAlto.svg')}}" href="works.html">
-</div>
-<div class="logoExpo 2 ">
-<img src="{{asset('front/logoEvent.Vecteursvg.svg')}}" href="works.html">
+    </div>
+<div class="logoExpo 2">
+        <img src="{{asset('front/logoEvent.Vecteursvg.svg')}}" href="works.html">
        <img src="{{asset('front/imgWorkshop.jpg')}}" href="works.html">
        <img src="{{asset('front/txtRisographieVecteur.svg')}}" href="works.html">
 </div>
 </article>
-</section>
+</section> -->
 
 <section class="sectionPartenaires">
 <h2>Partenaires</h2>
 
 <div class="card-carousel">
   @foreach ($partners as $partner)
-    <div class="my-card"><img src="{{asset('images/'.$partner->picturePartner->url_img_partners)}}" alt="$partner->picturePartner->titre">
+    <div class="my-card"><img src="{{asset('images/'.$partner->picturePartner->url_img_partners)}}" alt="{{$partner->picturePartner->titre}}">
+    <p>{{$partner->nom}}</p>
+      <a href="https://www.google.fr"><p>{{$partner->description}}</p></a>
     </div>
   @endforeach
 </div>
@@ -87,90 +116,13 @@
   </div>
 </section>
 
-
-
-  
-
-
-<!-- FIN PARTENAIRES -->
 @endsection
 
-<!-- pour API INstagram -->
 @section('scripts')
-<script src="{{asset('js/app.js')}}"></script>
+@parent
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/instafeed.js/1.4.1/instafeed.min.js"></script>
-  <script>$('.carousel').carousel()</script>
-  <script>
-$num = $('.my-card').length;
-$even = $num / 2;
-$odd = ($num + 1) / 2;
-
-if ($num % 2 == 0) {
-  $('.my-card:nth-child(' + $even + ')').addClass('active');
-  $('.my-card:nth-child(' + $even + ')').prev().addClass('prev');
-  $('.my-card:nth-child(' + $even + ')').next().addClass('next');
-} else {
-  $('.my-card:nth-child(' + $odd + ')').addClass('active');
-  $('.my-card:nth-child(' + $odd + ')').prev().addClass('prev');
-  $('.my-card:nth-child(' + $odd + ')').next().addClass('next');
-}
-
-$('.my-card').click(function() {
-  $slide = $('.active').width();
-  console.log($('.active').position().left);
-  
-  if ($(this).hasClass('next')) {
-    $('.card-carousel').stop(false, true).animate({left: '-=' + $slide});
-  } else if ($(this).hasClass('prev')) {
-    $('.card-carousel').stop(false, true).animate({left: '+=' + $slide});
-  }
-  
-  $(this).removeClass('prev next');
-  $(this).siblings().removeClass('prev active next');
-  
-  $(this).addClass('active');
-  $(this).prev().addClass('prev');
-  $(this).next().addClass('next');
-});
-
-
-// Keyboard nav
-$('html body').keydown(function(e) {
-  if (e.keyCode == 37) { // left
-    $('.active').prev().trigger('click');
-  }
-  else if (e.keyCode == 39) { // right
-    $('.active').next().trigger('click');
-  }
-});
-</script>
-
-<script type="text/javascript">
-
-
-    var loadButton = document.getElementById('load-more');
-    var feed = new Instafeed({
-        get: 'user',
-        userId: '7983810479',
-        accessToken: '7983810479.1677ed0.aaadb05b044548f48aed1794e16533ca',
-        limit: 14,
-        // every time we load more, run this function
-        after: function() {
-            // disable button if no more results to load
-            if (!this.hasNext()) {
-            loadButton.setAttribute('disabled', 'disabled');
-            }
-        },
-        });
-
-        // bind the load more button
-        loadButton.addEventListener('click', function() {
-        feed.next();
-        });
-
-        // run our feed!
-        feed.run();
-        </script>
-<!-- pour  API INstagram afin d'optimisé-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/instafeed.js/1.4.1/instafeed.min.js"></script>
+<script src="{{asset('js/carousel-bootstrap.js')}}"></script>
+<script src="{{asset('js/instagram.js')}}"></script>
+<script src="{{asset('js/carousel-partenaire.js')}}"></script>
 @endsection

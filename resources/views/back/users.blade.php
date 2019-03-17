@@ -2,8 +2,6 @@
 
 @section('content')
 
-
-
 <table class="table table-striped table-hover">
   <thead>
     <tr>
@@ -42,5 +40,7 @@
     @endforeach
   </tbody>
 </table>
-
+<div class="text-right mt-5">
+  <a href="{{route('utilisateurs.create')}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Ajouter un événement</a>
+</div>
 @endsection

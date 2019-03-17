@@ -13,25 +13,25 @@
   </div>
 </div>
 <div class="page-content">
-        <div class="container">
-        <div class="header-event">
-	<div class="event imgExpo1">
-		<p class="event-paragraph">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ad maxime quas non consequuntur quo cumque. Doloremque illum sed dolores, fugit sequi provident assumenda nobis accusantium in architecto cumque id quas beatae officiis, error quisquam rerum praesentium quae quidem iusto voluptatum eveniet adipisci. Sunt consequatur quaerat reprehenderit voluptatem rerum totam!</p>
-	</div>
-		<div class="event imgExpo2"></div>
+    <div class="container">
+        <div class="header-event mb-5">
+	        <div class="event imgExpo1">
+		        <p class="event-paragraph">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ad maxime quas non consequuntur quo cumque. Doloremque illum sed dolores, fugit sequi provident assumenda nobis accusantium in architecto cumque id quas beatae officiis, error quisquam rerum praesentium quae quidem iusto voluptatum eveniet adipisci. Sunt consequatur quaerat reprehenderit voluptatem rerum totam!
+                </p>
+	        </div>
+        <div class="event imgExpo2"></div>
+    </div>
         <!-- FIN HEADER -->
 
 <nav class="navbar navbar-white bg-white">
-    <div>
-    <input class="col-sm-4 " type="text" placeholder="Chercher par compétence" aria-label="Search" name="search" id="search">
+    <div class="col-sm-7 col-lg-5">
+    <input class="col-sm-7" type="text" placeholder="Chercher par compétence" aria-label="Search" name="search" id="search" width="300px">
     <input type="submit" class="btn btn-primary">
     </div>
     <a href="">⭐ Afficher mes favoris</a>
 </nav>
-
-
 <section id="team" class="pb-5">
-    <div class="container">
+    
         <h5 class="section-title h1">Nos membres</h5>
         <div class="row">
             <!-- Carte membre -->
@@ -92,11 +92,10 @@
                 </div>
             </div>
       @endforeach
-            <!-- ./Team member -->
-            
-
+            <!-- FIN carte membre -->
         </div>
-    </div>
+    
+</div>
 </section>
 {{$users->links()}}
 

@@ -7,7 +7,7 @@
 		<h1>Nos produits</h1>
 		<p>Voici une liste des produits que nous vous proposons, si vous souhaitez en acheter, c'est par <a href="">ici</a>.</p>
 	</div>
-	<div class="row justify-content-center">
+	<div class="container row justify-content-center">
 	@foreach($products as $product)
 		<div class='list-group gallery'>
             <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3'>
@@ -27,5 +27,6 @@
 
 @section('scripts')
     @parent
-    <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+	<script src="{{asset('js/shop.js')}}"></script>
 @endsection
