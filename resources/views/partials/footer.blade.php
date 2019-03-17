@@ -9,7 +9,7 @@
 @endif
     <form action="{{ URL('/newsletter') }}" method="POST">
         @csrf
-        <h5>Notre newsletter, pour ne rien louper de notre actualité !</h5>
+        <h5 class="text-white">Notre newsletter, pour ne rien louper de notre actualité !</h5>
         <div class="row justify-content-center container" >
             <input type="text" id="" name="email" placeholder="ton@mail.com" class="tonmail">
             <input type="submit" value="Abonne-toi !" class="btn btn-large btn-newsletter">

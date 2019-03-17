@@ -168,6 +168,6 @@ class EventController extends Controller
     {
         $event = Event::find($id);
         $event->delete();
-        return redirect()->route('index');
+        return redirect()->route('event.index');
     }
 }
