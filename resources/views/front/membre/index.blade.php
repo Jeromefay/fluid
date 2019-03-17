@@ -1,9 +1,6 @@
 @extends('layouts.master')
 
-
 @section('content')
-
-
 
 <div class="container pp-section">
   <div class="row">

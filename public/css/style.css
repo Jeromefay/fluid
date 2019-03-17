@@ -277,7 +277,7 @@ h5 {
   background-color: #414042;
   text-align: center;
   padding: 1rem 0 1rem 0;
-  margin-top: 14rem;
+  margin-top: 10rem;
 }
 .footer ul li {
   list-style: none; 
@@ -486,6 +486,7 @@ form button:hover{
 
 .img-shop{
   width: 320px;
+  max-width: 320px;
 }
 
 .img-title{
